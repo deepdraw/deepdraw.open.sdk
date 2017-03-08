@@ -110,6 +110,7 @@ public class ApiGatewaySignUtil {
 		if (null != headers) {
 			Map<String, String> sortedHeaders = new TreeMap<String, String>();
 			sortedHeaders.putAll(headers);
+			baseSignHeaders.forEach(item -> sortedHeaders.remove(item));
 
 			sortedHeaders.forEach((n, v) -> {
 				sb.append(n).append(":").append(StringUtils.trimToEmpty(v)).append(NL);
