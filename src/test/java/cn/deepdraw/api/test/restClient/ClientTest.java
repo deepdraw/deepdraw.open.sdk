@@ -37,14 +37,37 @@ public class ClientTest {
 
 	@Test
 	public void getTest() throws Exception {
-		RestResponse restResponse = client.get("/test", null, null);
+		RestResponse restResponse = null;
+		
+		restResponse = client.get("/merchants;id=1", null, null);
 		System.out.println("body:" + restResponse.getBody());
-
-		RestResponse restResponse_ = client.get("/product/1", null, null);
-		System.out.println("body:" + restResponse_.getBody());
-
-		RestResponse restResponse___ = client.get("/merchant/4/saleCalender;day=2021-09-25/listProduct", null, null);
-		System.out.println("body:" + restResponse___.getBody());
+		
+		restResponse = client.get("/merchants;name=wang", null, null);
+		System.out.println("body:" + restResponse.getBody());
+		
+		restResponse = client.get("/merchants;id=1/saleCalender", null, null);
+		System.out.println("body:" + restResponse.getBody());
+		
+		restResponse = client.get("/merchants;id=3/saleCalender;day=2020-10-07/listProduct", null, null);
+		System.out.println("body:" + restResponse.getBody());
+		
+		restResponse = client.get("/products;id=1", null, null);
+		System.out.println("body:" + restResponse.getBody());
+		
+		restResponse = client.get("/products;id=1/pictures", null, null);
+		System.out.println("body:" + restResponse.getBody());
+		
+		restResponse = client.get("/products;id=1/visionResource", null, null);
+		System.out.println("body:" + restResponse.getBody());
+		
+		restResponse = client.get("/trades;id=1/subs", null, null);
+		System.out.println("body:" + restResponse.getBody());
+		
+		restResponse = client.get("/trades;id=1860/fields", null, null);
+		System.out.println("body:" + restResponse.getBody());
+		
+//		restResponse = client.get("/test", null, null);
+//		System.out.println("body:" + restResponse.getBody());
 
 	}
 
