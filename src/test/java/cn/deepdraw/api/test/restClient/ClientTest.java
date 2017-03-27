@@ -88,6 +88,13 @@ public class ClientTest {
 			System.out.println("请求失败，错误原因（"+restResponse.getHeader("X-Ca-Error-Message")+"）");
 		}
 		
+		restResponse = client.get("/products;id=9845/sku", null, null);
+		if(200 == restResponse.getStatusCode()){
+			System.out.println("body:" + restResponse.getBody());
+		}else{
+			System.out.println("请求失败，错误原因（"+restResponse.getHeader("X-Ca-Error-Message")+"）");
+		}
+		
 		restResponse = client.get("/trades;id=1/subs", null, null);
 		if(200 == restResponse.getStatusCode()){
 			System.out.println("body:" + restResponse.getBody());
