@@ -16,4 +16,4 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = 'deepdraw.sdk.open'
+rootProject.name = 'deepdraw.open.sdk_java'
