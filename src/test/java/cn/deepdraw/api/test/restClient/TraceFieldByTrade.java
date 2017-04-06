@@ -57,7 +57,7 @@ public class TraceFieldByTrade {
 		 * 490:母婴;
 		 * 514 鞋类箱包
 		 * 
-		 * 更多类目信息，请导出  /trades;id=1/subs 信息。
+		 * 更多类目信息，请填写以下代码  /trades;id=?/subs 处信息的参数为 1。
 		 * 在导出文件中，的最前面部分“品类信息”处查看
 		 * (在线json编辑器查看更文件：http://www.bejson.com/jsoneditoronline/)
 		 * 
