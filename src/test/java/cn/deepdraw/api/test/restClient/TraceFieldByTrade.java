@@ -51,7 +51,18 @@ public class TraceFieldByTrade {
 	public void trace() throws Exception {
 		RestResponse restResponse = null;
 
-		restResponse = client.get("/trades;id=1/subs", null, null);
+		/*
+		 * 1:所有类目; 
+		 * 2:服装;
+		 * 490:母婴;
+		 * 514 鞋类箱包
+		 * 
+		 * 更多类目信息，请导出  /trades;id=1/subs 信息。
+		 * 在导出文件中，的最前面部分“品类信息”处查看
+		 * (在线json编辑器查看更文件：http://www.bejson.com/jsoneditoronline/)
+		 * 
+		 * */
+		restResponse = client.get("/trades;id=2/subs", null, null);
 		if (200 == restResponse.getStatusCode()) {
 
 			JsonNode jsonNode = mapper.readTree(restResponse.getBody());
