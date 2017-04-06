@@ -28,7 +28,10 @@ public class ClientTest {
 
 	private String APP_KEY = "23618344";
 	private String APP_SECRET = "d489895c2ad895fe4a4fdfc4586bedcc";
-	private String SERVER_URL = "http://open.soomey.net";
+	//正式数据环境
+	private String SERVER_URL = "http://open.deepdraw.cn";
+	//测试数据环境
+//	private String SERVER_URL = "http://open.soomey.net";
 
 	@Before
 	public void setup() {
@@ -39,7 +42,7 @@ public class ClientTest {
 	public void getTest() throws Exception {
 		RestResponse restResponse = null;
 		
-		restResponse = client.get("/merchants;id=1", null, null);
+		restResponse = client.get("/merchants;id=1001", null, null);
 		if(200 == restResponse.getStatusCode()){
 			System.out.println("body:" + restResponse.getBody());
 		}else{
@@ -53,14 +56,14 @@ public class ClientTest {
 			System.out.println("请求失败，错误原因（"+restResponse.getHeader("X-Ca-Error-Message")+"）");
 		}
 		
-		restResponse = client.get("/merchants;id=1/saleCalender", null, null);
+		restResponse = client.get("/merchants;id=10/saleCalender?pageNo=1", null, null);
 		if(200 == restResponse.getStatusCode()){
 			System.out.println("body:" + restResponse.getBody());
 		}else{
 			System.out.println("请求失败，错误原因（"+restResponse.getHeader("X-Ca-Error-Message")+"）");
 		}
 		
-		restResponse = client.get("/merchants;id=4/saleCalender;day=2021-09-25/listProduct", null, null);
+		restResponse = client.get("/merchants;id=1001/saleCalender;day=2021-09-25/listProduct", null, null);
 		if(200 == restResponse.getStatusCode()){
 			System.out.println("body:" + restResponse.getBody());
 		}else{
