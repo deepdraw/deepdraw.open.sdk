@@ -82,7 +82,7 @@ public class TraceFieldByTrade {
 					printWriter.println("######## 获取字段信息失败 ########");
 				}
 
-				printField(trades.path("children"));
+				printField(trade.path("children"));
 			} catch (MethodNotSupportedException | IOException e) {
 				e.printStackTrace();
 			}
